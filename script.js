@@ -50,8 +50,11 @@ const quiz = [
       answer: 1
   }
 ]
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> Stashed changes
 
 const questionNumber = document.querySelector(".question-number");
 const questionText = document.querySelector(".question-text");
@@ -128,4 +131,132 @@ function getResult(element){
     const id = parseInt(element.id);
     //get the answer by comparing the id of clicked option to the id of answer
     if(id === currentQuestion.answer){
+<<<<<<< Updated upstream
 >>>>>>> f757b103136623ce5b941c5ec032bc1cbe7807e9
+=======
+        //set the green colour to the correct answer
+        element.classList.add("correct");
+        //add the indicator correct mark
+        updateAnswerIndicator("correct");
+        correctAnswers++;
+    }
+    else{
+        //set the red colour to the incorrect answer
+        element.classList.add("incorrect");
+        //add the indicator incorrect mark
+        updateAnswerIndicator("incorrect");
+        
+
+        //if the answer is incorrect, it will reveal the correct answer with the colour green
+        const optionLen = optionContainer.children.length;
+        for(let i = 0; i < optionLen; i++){
+            if(parseInt(optionContainer.children[i].id) === currentQuestion.answer){
+                optionContainer.children[i].classList.add("correct");
+            }
+        }
+    }
+    attempt++;
+    unclickableOptions();
+}
+
+//making all choices unclickable once user has already chosen one of the options
+function unclickableOptions(){
+    const optionLen = optionContainer.children.length;
+    for(let i = 0; i < optionLen; i++){
+        optionContainer.children[i].classList.add("already-answered");
+    }
+
+}
+
+function answersIndicator(){
+    answersIndicatorContainer.innerHTML = '';
+    const totalQuestion = quiz.length;
+    for(let i = 0; i < totalQuestion; i++){
+        const indicator = document.createElement("div");
+        answersIndicatorContainer.appendChild(indicator);
+
+    }
+
+}
+
+function updateAnswerIndicator(markType){
+    answersIndicatorContainer.children[questionCounter - 1].classList.add(markType)
+
+}
+
+function next(){
+    if(questionCounter === quiz.length){
+        quizOver();
+    }
+    else{
+        getNewQuestion();
+    }
+
+}
+
+function quizOver(){
+    //hide quiz box
+    quizBox.classList.add("hide");
+    //show result box
+    resultBox.classList.remove("hide");
+    quizResult();
+
+}
+
+function quizResult(){
+    resultBox.querySelector(".total-question").innerHTML = quiz.length;
+    resultBox.querySelector(".total-attempt").innerHTML = attempt;
+    resultBox.querySelector(".total-correct").innerHTML = correctAnswers;
+    resultBox.querySelector(".total-incorrect").innerHTML = attempt - correctAnswers;
+    const percentage = (correctAnswers/quiz.length) * 100;
+    resultBox.querySelector(".percentage").innerHTML = percentage.toFixed(2) + "%";
+    resultBox.querySelector(".total-score").innerHTML = correctAnswers + " / " + quiz.length;
+
+}
+
+function resetQuiz(){
+    questionCounter = 0;
+    correctAnswers = 0;
+    attempt = 0;
+
+}
+
+function tryAgainQuiz(){
+    //hide the resultBox
+    resultBox.classList.add("hide");
+    //show the quizBox
+    quizBox.classList.remove("hide");
+    resetQuiz();
+    startQuiz();
+
+}
+
+function goToHome(){
+    //hide resultBox
+    resultBox.classList.add("hide");
+    //show homeBox
+    homeBox.classList.remove("hide");
+    resetQuiz();
+}
+
+//    STARTING POINT
+
+function startQuiz(){
+    //hide homeBox
+    homeBox.classList.add("hide");
+    //show the quizBox
+    quizBox.classList.remove("hide");
+    //first set all the question in availableQuestions Array
+    setavailableQuestions();
+    //second we call getNewQuestion(); function
+    getNewQuestion();
+    //to keep score of the answers
+    answersIndicator();
+
+}
+
+window.onload = function (){
+    homeBox.querySelector(".total-questions").innerHTML = quiz.length;
+
+}
+>>>>>>> Stashed changes
