@@ -96,3 +96,6 @@ function getNewQuestion(){
     for(let i =0; i < optionLen; i++){
         availableOptions.push(i)
     }
+
+    optionContainer.innerHTML = '';
+    let animationDelay = 0.15;
