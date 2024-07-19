@@ -76,3 +76,5 @@ function setavailableQuestions(){
 
 //setting the question number, questions and options.
 function getNewQuestion(){
+    //question number
+    questionNumber.innerHTML = 'Question ' + (questionCounter + 1) + ' of ' + quiz.length;
