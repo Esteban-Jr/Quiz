@@ -86,3 +86,5 @@ function getNewQuestion(){
     questionText.innerHTML = currentQuestion.q;
     //getting position 'questionIndex' from availableQuestion Array
     const index1 = availableQuestions.indexOf(questionIndex);
+    //remove the question from questionIndex from availableQuestion Array, so question won't repeat
+    availableQuestions.splice(index1, 1);
