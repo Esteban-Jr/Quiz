@@ -73,3 +73,6 @@ function setavailableQuestions(){
         availableQuestions.push(quiz[i])
     }
 }
+
+//setting the question number, questions and options.
+function getNewQuestion(){
