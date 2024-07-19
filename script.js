@@ -99,3 +99,21 @@ function getNewQuestion(){
 
     optionContainer.innerHTML = '';
     let animationDelay = 0.15;
+
+    //create options in html
+    for(let i = 0; i < optionLen; i++){
+        //randomize the options
+        const optionIndex = availableOptions[Math.floor(Math.random() * availableOptions.length)]
+        //get the position of 'optionIndex' from the availableOptions Array
+        const index2 = availableOptions.indexOf(optionIndex);
+        //remove the 'optionIndex' from the availableOptions, so that the option doe snot repeat
+        availableOptions.splice(index2, 1);
+        const option = document.createElement("div");
+        option.innerHTML = currentQuestion.options[optionIndex];
+        option.id = optionIndex;
+        option.style.animationDelay = animationDelay + 's';
+        animationDelay = animationDelay + 0.15;
+        option.className = 'option';
+        optionContainer.appendChild(option)
+        option.setAttribute("onclick", "getResult(this)");
+    }
