@@ -78,3 +78,9 @@ function setavailableQuestions(){
 function getNewQuestion(){
     //question number
     questionNumber.innerHTML = 'Question ' + (questionCounter + 1) + ' of ' + quiz.length;
+
+    //asking the quetsions
+    //randomizing questions
+    const questionIndex = availableQuestions[Math.floor(Math.random() * availableQuestions.length)]
+    currentQuestion = questionIndex;
+    questionText.innerHTML = currentQuestion.q;
