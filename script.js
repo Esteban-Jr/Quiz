@@ -124,3 +124,5 @@ function getNewQuestion(){
 //get the result of the option chosen
 function getResult(element){
     const id = parseInt(element.id);
+    //get the answer by comparing the id of clicked option to the id of answer
+    if(id === currentQuestion.answer){
