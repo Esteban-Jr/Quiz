@@ -117,3 +117,6 @@ function getNewQuestion(){
         optionContainer.appendChild(option)
         option.setAttribute("onclick", "getResult(this)");
     }
+
+    questionCounter++;
+}
