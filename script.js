@@ -84,3 +84,5 @@ function getNewQuestion(){
     const questionIndex = availableQuestions[Math.floor(Math.random() * availableQuestions.length)]
     currentQuestion = questionIndex;
     questionText.innerHTML = currentQuestion.q;
+    //getting position 'questionIndex' from availableQuestion Array
+    const index1 = availableQuestions.indexOf(questionIndex);
