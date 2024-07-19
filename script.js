@@ -65,3 +65,11 @@ let availableQuestions = [];
 let availableOptions = [];
 let correctAnswers = 0;
 let attempt = 0;
+
+//push the question into setavailableQuestions Array
+function setavailableQuestions(){
+    const totalQuestion = quiz.length;
+    for(let i = 0; i < totalQuestion; i++){
+        availableQuestions.push(quiz[i])
+    }
+}
