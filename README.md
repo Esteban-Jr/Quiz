@@ -1,4 +1,4 @@
-#Football Quiz
+# Football Quiz
 
 Welcome to the Football Quiz! This interactive quiz tests your knowledge about football, including players, teams, history, and trivia. Challenge yourself and see how much you know about the beautiful game.
 
@@ -11,3 +11,9 @@ The live link can be found here - [Football Quiz](https://esteban-jr.github.io/Q
 - Multiple Choice Questions: Answer questions from various options.
 - Score Tracking: Keep track of your score as you progress.
 
+## Validator Testing
+
+- ### HTML 
+  - No errors were returned when passing through W3C validator
+- ### CSS
+  - No errors were returned when passing through (Jigsaw) validator
