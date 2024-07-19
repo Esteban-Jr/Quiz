@@ -88,3 +88,7 @@ function getNewQuestion(){
     const index1 = availableQuestions.indexOf(questionIndex);
     //remove the question from questionIndex from availableQuestion Array, so question won't repeat
     availableQuestions.splice(index1, 1);
+
+    //set options
+    //get the length of options
+    const optionLen = currentQuestion.options.length
