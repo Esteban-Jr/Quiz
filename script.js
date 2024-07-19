@@ -50,3 +50,82 @@ const quiz = [
       answer: 1
   }
 ]
+<<<<<<< HEAD
+=======
+
+const questionNumber = document.querySelector(".question-number");
+const questionText = document.querySelector(".question-text");
+const optionContainer = document.querySelector(".option-container");
+const answersIndicatorContainer = document.querySelector(".answers-indicator");
+const homeBox = document.querySelector(".home-box");
+const quizBox = document.querySelector(".quiz-box");
+const resultBox = document.querySelector(".result-box");
+
+let questionCounter = 0;
+let currentQuestion;
+let availableQuestions = [];
+let availableOptions = [];
+let correctAnswers = 0;
+let attempt = 0;
+
+//push the question into setavailableQuestions Array
+function setavailableQuestions(){
+    const totalQuestion = quiz.length;
+    for(let i = 0; i < totalQuestion; i++){
+        availableQuestions.push(quiz[i])
+    }
+}
+
+//setting the question number, questions and options.
+function getNewQuestion(){
+    //question number
+    questionNumber.innerHTML = 'Question ' + (questionCounter + 1) + ' of ' + quiz.length;
+
+    //asking the quetsions
+    //randomizing questions
+    const questionIndex = availableQuestions[Math.floor(Math.random() * availableQuestions.length)]
+    currentQuestion = questionIndex;
+    questionText.innerHTML = currentQuestion.q;
+    //getting position 'questionIndex' from availableQuestion Array
+    const index1 = availableQuestions.indexOf(questionIndex);
+    //remove the question from questionIndex from availableQuestion Array, so question won't repeat
+    availableQuestions.splice(index1, 1);
+
+    //set options
+    //get the length of options
+    const optionLen = currentQuestion.options.length
+    //push options into availableOptions Array
+    for(let i =0; i < optionLen; i++){
+        availableOptions.push(i)
+    }
+
+    optionContainer.innerHTML = '';
+    let animationDelay = 0.15;
+
+    //create options in html
+    for(let i = 0; i < optionLen; i++){
+        //randomize the options
+        const optionIndex = availableOptions[Math.floor(Math.random() * availableOptions.length)]
+        //get the position of 'optionIndex' from the availableOptions Array
+        const index2 = availableOptions.indexOf(optionIndex);
+        //remove the 'optionIndex' from the availableOptions, so that the option doe snot repeat
+        availableOptions.splice(index2, 1);
+        const option = document.createElement("div");
+        option.innerHTML = currentQuestion.options[optionIndex];
+        option.id = optionIndex;
+        option.style.animationDelay = animationDelay + 's';
+        animationDelay = animationDelay + 0.15;
+        option.className = 'option';
+        optionContainer.appendChild(option)
+        option.setAttribute("onclick", "getResult(this)");
+    }
+
+    questionCounter++;
+}
+
+//get the result of the option chosen
+function getResult(element){
+    const id = parseInt(element.id);
+    //get the answer by comparing the id of clicked option to the id of answer
+    if(id === currentQuestion.answer){
+>>>>>>> f757b103136623ce5b941c5ec032bc1cbe7807e9
