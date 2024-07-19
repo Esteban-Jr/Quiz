@@ -120,3 +120,7 @@ function getNewQuestion(){
 
     questionCounter++;
 }
+
+//get the result of the option chosen
+function getResult(element){
+    const id = parseInt(element.id);
