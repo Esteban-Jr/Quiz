@@ -92,3 +92,7 @@ function getNewQuestion(){
     //set options
     //get the length of options
     const optionLen = currentQuestion.options.length
+    //push options into availableOptions Array
+    for(let i =0; i < optionLen; i++){
+        availableOptions.push(i)
+    }
