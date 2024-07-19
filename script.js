@@ -50,11 +50,6 @@ const quiz = [
       answer: 1
   }
 ]
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-=======
->>>>>>> Stashed changes
 
 const questionNumber = document.querySelector(".question-number");
 const questionText = document.querySelector(".question-text");
@@ -131,9 +126,6 @@ function getResult(element){
     const id = parseInt(element.id);
     //get the answer by comparing the id of clicked option to the id of answer
     if(id === currentQuestion.answer){
-<<<<<<< Updated upstream
->>>>>>> f757b103136623ce5b941c5ec032bc1cbe7807e9
-=======
         //set the green colour to the correct answer
         element.classList.add("correct");
         //add the indicator correct mark
@@ -259,4 +251,3 @@ window.onload = function (){
     homeBox.querySelector(".total-questions").innerHTML = quiz.length;
 
 }
->>>>>>> Stashed changes
