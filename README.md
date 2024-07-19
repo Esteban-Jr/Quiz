@@ -11,6 +11,14 @@ The live link can be found here - [Football Quiz](https://esteban-jr.github.io/Q
 - Multiple Choice Questions: Answer questions from various options.
 - Score Tracking: Keep track of your score as you progress.
 
+## Testing
+
+- I tested the quiz in different browsers
+- I confirmed that the game results are always correct
+- I confirmed that the instructions were straight foward for the users to read
+
+![Lighthouse score](/assets/readMeImages/lighthouse.jpg)
+
 ## Validator Testing
 
 - ### HTML 
