@@ -1,6 +1,6 @@
 const quiz = [
   {
-      q:'Whos is the GOAT of football?',
+      q:'Who is the GOAT of football?',
       options:['Lionel Messi','Cristiano Ronaldo','Neymar Jr','Eden Hazard'],
       answer: 0
   },
@@ -25,7 +25,7 @@ const quiz = [
       answer: 0
   },
   {
-      q:'What football has the most Champions league trophies?',
+      q:'What football club has the most Champions league trophies?',
       options:['Barcelona','Real Madrid','Chelsea','Arsenal'],
       answer: 1
   },
@@ -40,7 +40,7 @@ const quiz = [
       answer: 3
   },
   {
-      q:'Who is the mst decorated player of all time?',
+      q:'Who is the most decorated player of all time?',
       options:['Lionel Messi','Dani Alves','Andres Iniesta','David Alaba'],
       answer: 0
   },
