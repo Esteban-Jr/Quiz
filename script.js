@@ -20,7 +20,7 @@ const quiz = [
       answer: 3
   },
   {
-      q:'Who has the most Ballon d\'Or?',
+      q:'Who has the most Ballon d\'Ors?',
       options:['Lionel Messi','Lev Yashin','Johan Cruyff','Zinedine Zidane'],
       answer: 0
   },
